@@ -13,7 +13,7 @@ body {
 	--color-text: #fff;
 	--color-bg: #c2c6c9;
 	--color-link: #000;
-	--color-link-hover: #000;
+	--color-link-hover: rgb(255, 0, 0);
 	--color-menu: #000;
 	--fontsize-menu: 16px;
 	--font-menu: titling-gothic-fb, sans-serif;
@@ -23,6 +23,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
+	cursor: none;
 }
 
 
@@ -128,7 +129,7 @@ main {
 .menu__item {
     border: none;
     transition: none;
-    cursor: pointer;
+    cursor: none;
     position: relative;
 }
 
@@ -209,3 +210,24 @@ main {
 		grid-area: menu;
 	}
 }
+
+.cursor {
+	position: fixed;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+  }
+  .cursor--small {
+	width: 5px;
+	height: 5px;
+	left: -2.5px;
+	top: -2.5px;
+	border-radius: 50%;
+	z-index: 11000;
+	background: var(--color-text);
+  }
+  .cursor--canvas {
+	width: 100vw;
+	height: 100vh;
+	z-index: 12000;
+  }
