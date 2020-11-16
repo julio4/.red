@@ -101,6 +101,21 @@ main {
 	display: inline;
 }
 
+.switch img {
+	max-width: 20px;
+}
+
+.switch {
+	justify-self: end;
+	grid-area: text-subscribe-start;
+	color: transparent;
+	text-decoration: none;
+}
+
+.switch:hover {
+	color: transparent;
+}
+
 .demos {
 	margin: 1rem 0;
 }

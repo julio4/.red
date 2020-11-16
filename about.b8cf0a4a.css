@@ -68,6 +68,10 @@ a.ignored {
 	display: block;
 }
 
+.frame__links img {
+	max-width: 20px;
+}
+
 .frame__links > *:not(:last-child),
 .frame__demos > *:not(:last-child) {
     margin-right: 1rem;
