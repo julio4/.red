@@ -12,8 +12,8 @@ body {
 	margin: 0;
 	--color-text: #fff;
 	--color-bg: #c2c6c9;
-	--color-link: #000;
-	--color-link-hover: rgb(255, 0, 0);
+	--color-link: #d20d0d;
+	--color-link-hover: #d20d0d;
 	--color-menu: #000;
 	--fontsize-menu: 16px;
 	--font-menu: titling-gothic-fb, sans-serif;
@@ -124,6 +124,8 @@ main {
 	width: 100%;
 	min-height: 400px;
 	display: grid;
+	max-width: 650px;
+	max-height: 450px;
 }
 
 .menu__item {
