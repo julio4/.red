@@ -1,3 +1,0 @@
-# Personal site
-
-Will update projects, current works and more ...

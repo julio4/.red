@@ -34,6 +34,11 @@ a {
 	cursor: pointer;
 }
 
+::selection {
+	color: var(--color-link);
+	background: var(--color-bg);
+}
+
 a:hover,
 a:focus {
 	color: var(--color-link-hover);
@@ -42,13 +47,6 @@ a:focus {
 
 a.ignored {
 	color: white;
-}
-
-.message {
-	background: var(--color-text);
-	color: var(--color-bg);
-	padding: 1rem;
-	text-align: center;
 }
 
 .frame {
@@ -64,33 +62,16 @@ a.ignored {
 	font-weight: inherit;
 }
 
-.frame__links {
+.language {
 	display: block;
 }
 
-.frame__links img {
+.language img {
 	max-width: 20px;
 }
 
-.frame__links > *:not(:last-child),
-.frame__demos > *:not(:last-child) {
+.language > *:not(:last-child) {
     margin-right: 1rem;
-}
-
-.frame__demos {
-	margin: 1rem 0;
-}
-
-.frame__demos span {
-	font-weight: bold;
-	color: var(--color-link);
-}
-
-.frame__initials {
-	font-family: var(--font-alt);
-	font-size: 1.5rem;
-	pointer-events: none;
-	line-height: 18px;
 }
 
 .content {
@@ -112,6 +93,34 @@ a.ignored {
 	font-family: var(--font-alt);
 	font-weight: 300;
 	line-height: 1.4;
+	margin: 0;
+}
+
+@media screen and (min-width : 429px) {
+	.content p {
+		width: 80vw;
+	}
+	.frame {
+		grid-template-columns: 40% 20% 40%;
+		grid-template-rows: auto auto auto;
+		grid-template-areas: '. title .'
+							'. . .'
+							'. . language';
+	}
+}
+
+@media screen and (max-width : 428px) {  
+	.content p {
+		margin: 30px auto;
+		font-size: 7vw;
+	}
+	.frame {
+		grid-template-columns: 40% 20% 40%;
+		grid-template-rows: auto auto auto;
+		grid-template-areas: 'title . language'
+							'. . .'
+							'. . .';
+	}
 }
 
 .content p a {
@@ -172,58 +181,35 @@ a.ignored {
 	display: none;
 }
 
-@media screen and (min-width: 53em) {
-	.frame {
-		position: fixed;
-		text-align: left;
-		z-index: 10000;
-		top: 0;
-		left: 0;
-		display: grid;
-		align-content: space-between;
-		width: 100%;
-		max-width: none;
-		height: 100vh;
-		padding: 2.5rem 3rem;
-		pointer-events: none;
-		grid-template-columns: 40% 20% 40%;
-		grid-template-rows: auto auto auto;
-		grid-template-areas: 'title initials links'
-							'... ... ...'
-							'... demos ...';
-	}
-	.frame__title {
-		grid-area: title;
-		margin: 0;
-	}
-	.frame__initials {
-		grid-area: initials;
-		margin: 0;
-		justify-self: center;
-	    align-self: center;
-	}
-	.frame__demos {
-		margin: 0;
-		grid-area: demos;
-		justify-self: center;
-	}
-	.frame__links {
-		grid-area: links;
-		padding: 0;
-		justify-self: end;
-	}
-	.frame__info {
-		grid-area: info;
-		margin: 0;
-		justify-self: end;
-	}
-	.frame a {
-		pointer-events: auto;
-	}
-	.content {
-		height: 100vh;
-		justify-content: center;
-	}
+.frame {
+	position: fixed;
+	text-align: left;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	display: grid;
+	align-content: space-between;
+	width: 100%;
+	max-width: none;
+	padding: 2.5rem 3rem;
+	pointer-events: none;
+	height: 100vh;
+}
+.frame__title {
+	grid-area: title;
+	margin: 0;
+}
+.language {
+	grid-area: language;
+	padding: 0;
+	justify-self: end;
+}
+.frame a {
+	pointer-events: auto;
+}
+.content {
+	height: 100vh;
+	justify-content: center;
 }
 
 @media (any-pointer: fine) {
@@ -241,20 +227,3 @@ a.ignored {
 		stroke-width: var(--cursor-stroke-width);
 	}
 }
-© 2020 GitHub, Inc.
-Terms
-Privacy
-
-    Security
-    Status
-    Help
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-
-
-/*# sourceMappingURL=/about.b8cf0a4a.css.map */
